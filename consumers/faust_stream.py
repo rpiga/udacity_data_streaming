@@ -73,7 +73,7 @@ async def trans_stations(stations):
             order=station.order,
             line=line
         )
-        await out_topic.send(key=station.station_id, value=transformed)
+        await out_topic.send(key=station.station_name, value=transformed)
     
 
 if __name__ == "__main__":
