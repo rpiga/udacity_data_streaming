@@ -109,8 +109,9 @@ class Weather(Producer):
                      "records": [
                          {
                              "value": {
-                                 "temperature": f"{self.temp:.2f}"},
+                                 "temperature": f"{self.temp:.2f}",
                                  "status": self.status.name
+                             }
                          }
                      ]}
                     #
