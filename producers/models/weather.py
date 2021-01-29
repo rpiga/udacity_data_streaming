@@ -104,16 +104,17 @@ class Weather(Producer):
             headers={"Content-Type": "application/vnd.kafka.json.v2+json"},
             data=json.dumps(
                 {
-                    {"value_schema": Weather.value_schema, 
-                     "key_schema": Weather.key_schema,
+                    "value_schema": json.dumps(Weather.value_schema), 
+                     "key_schema": json.dumps(Weather.key_schema),
                      "records": [
-                         {
-                             "value": {
+                         {"key": { "timestamp": self.time_millis() },
+                          "value": {
                                  "temperature": f"{self.temp:.2f}",
                                  "status": self.status.name
                              }
                          }
-                     ]}
+                     ]
+                    
                     #
                     #
                     # TODO: Provide key schema, value schema, and records
