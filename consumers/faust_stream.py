@@ -67,13 +67,20 @@ async def trans_stations(stations):
         else:
             line="green"
             
-        transformed = TransformedStation(
+        table[station.station_id] = TransformedStation(
             station_id=station.station_id,
             station_name=station.station_name,
             order=station.order,
-            line=line
+            line=line            
         )
-        await out_topic.send(key=station.station_name, value=transformed)
+            
+#         transformed = TransformedStation(
+#             station_id=station.station_id,
+#             station_name=station.station_name,
+#             order=station.order,
+#             line=line
+#         )
+#         await out_topic.send(key=station.station_name, value=transformed)
     
 
 if __name__ == "__main__":
