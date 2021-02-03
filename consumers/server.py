@@ -77,7 +77,7 @@ def run_server():
         ),
         KafkaConsumer(
             #"(\w*|\.)*station.arrivals.(.(\w*|\.))*",
-            "com.udacity.station",
+            "^com.udacity.station.*",
             lines.process_message,
             offset_earliest=True,
         ),
