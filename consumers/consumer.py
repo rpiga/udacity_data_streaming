@@ -41,9 +41,9 @@ class KafkaConsumer:
         logger.info(">>> %s", self.message_handler)
 
         self.broker_properties = {
-                "bootstrap.servers": BROKER_URL,
-                "group.id": "com.udacity.cta",
-                "auto.offset.reset": 'earliest' if not self.offset_earliest else 'latest'
+            "bootstrap.servers": BROKER_URL,
+            "group.id": "com.udacity.cta",
+            "auto.offset.reset": 'earliest' if not self.offset_earliest else 'latest'
         }
 
         # TODO: Create the Consumer, using the appropriate type.
