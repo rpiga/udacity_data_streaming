@@ -37,7 +37,8 @@ app = faust.App("stations-stream", broker="kafka://localhost:9092", store="memor
 topic = app.topic("connect.stations", value_type=Station)
 
 # TODO: Define the output Kafka Topic
-out_topic = app.topic("connect.transformedstations", partitions=1, value_type=TransformedStation)
+#out_topic = app.topic("connect.transformedstations", partitions=1, value_type=TransformedStation)
+out_topic = app.topic("connect.stations.table", partitions=1, value_type=TransformedStation)
 
 # TODO: Define a Faust Table
 table = app.Table(
