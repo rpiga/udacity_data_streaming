@@ -130,3 +130,4 @@ class Weather(Producer):
             self.temp,
             self.status.name,
         )
+        print(f"DEBUG (weather 3) sent weather data to kafka, temp: {self.temp}, status: {self.status.name}")

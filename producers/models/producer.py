@@ -94,15 +94,15 @@ class Producer:
             for topic, future in futures.items():
                 try:
                     future.result()
-                    print("topic created")
+                    print(f"topic {self.topic_name} created")
                 except Exception as e:
                     print(f"failed to create topic {self.topic_name}: {e}")
 
         else:
             logger.info("topic creation kafka integration incomplete - skipping")
 
-    def time_millis(self):
-        return int(round(time.time() * 1000))
+#     def time_millis(self):
+#         return int(round(time.time() * 1000))
 
     def close(self):
         """Prepares the producer for exit by cleaning up the producer"""
